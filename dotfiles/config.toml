@@ -1,0 +1,6 @@
+border_width = 2
+border_color_active = 0x89b4fa
+border_color_inactive = 0x313244
+terminal = "alacritty"
+launcher = "rofi -show drun -theme ~/.config/glasswm/rofi/config.rasi"
+autostart_script = "~/.config/glasswm/autostart.sh"

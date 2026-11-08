@@ -1,0 +1,121 @@
+configuration {
+    modi:                       "drun,run,window,filebrowser";
+    show-icons:                 true;
+    display-drun:               " ";
+    display-run:                " ";
+    display-window:             " ";
+    display-filebrowser:        " ";
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font 11.5";
+}
+
+* {
+    bg-color:            rgba(20, 22, 32, 0.90);
+    input-bg:            rgba(255, 255, 255, 0.06);
+    border-color:        rgba(255, 255, 255, 0.15);
+    selected-color:      #8c7ae6;
+    fg-color:            #f5f5f7;
+    fg-dim:              #7a7c8d;
+}
+
+window {
+    transparency:        "real";
+    location:            southwest;
+    anchor:              southwest;
+    x-offset:            16px;
+    y-offset:            -52px;
+    width:               460px;
+    height:              520px;
+    border:              1px;
+    border-color:        @border-color;
+    border-radius:       18px;
+    background-color:    @bg-color;
+    padding:             0px;
+}
+
+mainbox {
+    background-color:    transparent;
+    padding:             18px;
+    children:            [ inputbar, listview, mode-switcher ];
+}
+
+inputbar {
+    background-color:    @input-bg;
+    border-radius:       12px;
+    padding:             10px 14px;
+    margin:              0px 0px 10px 0px;
+    border:              1px;
+    border-color:        rgba(255, 255, 255, 0.08);
+    children:            [ prompt, entry ];
+}
+
+prompt {
+    background-color:    transparent;
+    text-color:          #a6adc8;
+    padding:             0px 8px 0px 0px;
+}
+
+entry {
+    background-color:    transparent;
+    text-color:          @fg-color;
+    placeholder:         "Search apps, files, commands...";
+    placeholder-color:   @fg-dim;
+}
+
+listview {
+    lines:               7;
+    columns:             1;
+    cycle:               true;
+    scrollbar:           false;
+    layout:              vertical;
+    spacing:             4px;
+    background-color:    transparent;
+}
+
+element {
+    orientation:         horizontal;
+    border-radius:       10px;
+    padding:             8px 12px;
+    background-color:    transparent;
+    text-color:          @fg-color;
+}
+
+element-icon {
+    size:                28px;
+    horizontal-align:    0.5;
+    background-color:    transparent;
+    margin:              0px 12px 0px 0px;
+}
+
+element-text {
+    vertical-align:      0.5;
+    text-color:          @fg-color;
+    background-color:    transparent;
+}
+
+element selected {
+    background-color:    @selected-color;
+    text-color:          #ffffff;
+}
+
+mode-switcher {
+    enabled:             true;
+    spacing:             8px;
+    background-color:    transparent;
+    margin:              12px 0px 0px 0px;
+    padding:             8px 0px 0px 0px;
+    border:              1px 0px 0px 0px;
+    border-color:        rgba(255, 255, 255, 0.08);
+}
+
+button {
+    padding:             6px 14px;
+    border-radius:       10px;
+    background-color:    rgba(255, 255, 255, 0.06);
+    text-color:          #9399b2;
+}
+
+button selected {
+    background-color:    rgba(255, 255, 255, 0.16);
+    text-color:          #ffffff;
+}

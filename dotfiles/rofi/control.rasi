@@ -1,0 +1,90 @@
+configuration {
+    font:                       "JetBrainsMono Nerd Font 11.5";
+    show-icons:                 false;
+}
+
+* {
+    bg-color:            rgba(20, 22, 32, 0.90);
+    input-bg:            transparent;
+    border-color:        rgba(255, 255, 255, 0.14);
+    selected-color:      #8c7ae6;
+    fg-color:            #f5f5f7;
+    fg-dim:              #7a7c8d;
+    accent-color:        #8c7ae6;
+}
+
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               620px;
+    height:              520px;
+    border:              1px;
+    border-color:        @border-color;
+    border-radius:       18px;
+    background-color:    @bg-color;
+    padding:             0px;
+}
+
+mainbox {
+    background-color:    transparent;
+    padding:             18px;
+    children:            [ inputbar, listview ];
+}
+
+inputbar {
+    background-color:    transparent;
+    border-radius:       10px;
+    padding:             6px 12px 14px 12px;
+    margin:              0px 0px 8px 0px;
+    border:              0px 0px 1px 0px;
+    border-color:        rgba(255, 255, 255, 0.08);
+    children:            [ prompt, entry ];
+}
+
+prompt {
+    background-color:    transparent;
+    text-color:          @accent-color;
+    padding:             0px 10px 0px 0px;
+}
+
+entry {
+    background-color:    transparent;
+    text-color:          @fg-color;
+    placeholder:         "Control Center Search...";
+    placeholder-color:   @fg-dim;
+}
+
+listview {
+    lines:               8;
+    columns:             1;
+    cycle:               true;
+    scrollbar:           false;
+    layout:              vertical;
+    spacing:             4px;
+    background-color:    transparent;
+}
+
+element {
+    orientation:         horizontal;
+    border-radius:       10px;
+    padding:             9px 14px;
+    background-color:    transparent;
+    text-color:          @fg-color;
+}
+
+element-text {
+    vertical-align:      0.5;
+    text-color:          @fg-color;
+    background-color:    transparent;
+}
+
+/* Image 4 Signature Soft Purple Gradient Pill */
+element selected {
+    background-color:    @selected-color;
+    text-color:          #ffffff;
+}
+
+element-text selected {
+    text-color:          #ffffff;
+}

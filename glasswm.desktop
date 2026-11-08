@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=GlassWM
+Comment=Independent modern X11 window manager with liquid glass aesthetic
+Exec=glasswm
+Type=XSession
+DesktopNames=GlassWM

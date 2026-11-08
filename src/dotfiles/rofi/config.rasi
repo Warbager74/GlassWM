@@ -1,0 +1,95 @@
+configuration {
+    modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "";
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font 10.5";
+}
+
+* {
+    bg-color:            rgba(25, 27, 36, 0.85);
+    input-bg:            rgba(255, 255, 255, 0.08);
+    border-color:        rgba(255, 255, 255, 0.15);
+    selected-color:      rgba(255, 255, 255, 0.12);
+    fg-color:            #f0f6fc;
+    fg-dim:              #8b949e;
+}
+
+window {
+    transparency:        "real";
+    location:            center;
+    anchor:              center;
+    width:               640px;
+    height:              520px;
+    border:              1px;
+    border-color:        @border-color;
+    border-radius:       18px;
+    background-color:    @bg-color;
+}
+
+mainbox {
+    background-color:    transparent;
+    padding:             28px;
+    children:            [ inputbar, listview ];
+}
+
+inputbar {
+    background-color:    @input-bg;
+    border:              1px;
+    border-color:        @border-color;
+    border-radius:       25px;
+    padding:             10px 18px;
+    margin:              0px 0px 24px 0px;
+    children:            [ prompt, entry ];
+}
+
+prompt {
+    background-color:    transparent;
+    text-color:          @fg-dim;
+    padding:             0px 10px 0px 0px;
+}
+
+entry {
+    background-color:    transparent;
+    text-color:          @fg-color;
+    placeholder:         "Type here to search...";
+    placeholder-color:   @fg-dim;
+}
+
+listview {
+    columns:             5;
+    lines:               4;
+    cycle:               true;
+    scrollbar:           false;
+    layout:              vertical;
+    spacing:             16px;
+    background-color:    transparent;
+}
+
+element {
+    orientation:         vertical;
+    border-radius:       12px;
+    padding:             14px 6px;
+    background-color:    transparent;
+    text-color:          @fg-color;
+}
+
+element-icon {
+    size:                44px;
+    horizontal-align:    0.5;
+    background-color:    transparent;
+}
+
+element-text {
+    horizontal-align:    0.5;
+    vertical-align:      0.5;
+    text-color:          @fg-color;
+    margin:              8px 0px 0px 0px;
+    background-color:    transparent;
+}
+
+element selected {
+    background-color:    @selected-color;
+    border:              1px;
+    border-color:        @border-color;
+}

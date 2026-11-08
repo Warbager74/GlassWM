@@ -1,0 +1,31 @@
+# Maintainer: GlassWM Authors
+pkgname=glasswm
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Independent modern X11 window manager with liquid glass aesthetics"
+arch=('x86_64')
+url="https://github.com/local/glasswm"
+license=('MIT')
+depends=('libxcb' 'picom' 'rofi' 'polybar' 'feh' 'ttf-jetbrains-mono-nerd' 'alacritty')
+makedepends=('rust' 'cargo')
+source=()
+
+build() {
+  cargo build --release --locked
+}
+
+package() {
+  # Install binary
+  install -Dm755 "target/release/glasswm" "$pkgdir/usr/bin/glasswm"
+
+  # Install desktop entry for Display Managers (SDDM, LightDM, GDM)
+  install -Dm644 "glasswm.desktop" "$pkgdir/usr/share/xsessions/glasswm.desktop"
+
+  # Install default skeleton configuration to /etc/skel/.config/glasswm
+  install -d "$pkgdir/etc/skel/.config/glasswm/rofi"
+  install -Dm644 "dotfiles/config.toml" "$pkgdir/etc/skel/.config/glasswm/config.toml"
+  install -Dm644 "dotfiles/picom.conf" "$pkgdir/etc/skel/.config/glasswm/picom.conf"
+  install -Dm644 "dotfiles/polybar.ini" "$pkgdir/etc/skel/.config/glasswm/polybar.ini"
+  install -Dm644 "dotfiles/rofi/config.rasi" "$pkgdir/etc/skel/.config/glasswm/rofi/config.rasi"
+  install -Dm755 "dotfiles/autostart.sh" "$pkgdir/etc/skel/.config/glasswm/autostart.sh"
+}
